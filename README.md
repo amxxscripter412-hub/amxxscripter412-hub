@@ -1,16 +1,24 @@
-## Hi there 👋
+# El
 
-<!--
-**amxxscripter412-hub/amxxscripter412-hub** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Building COD:MW4 - The ultimate RPG mod for Counter-Strike 1.6.
 
-Here are some ideas to get you started:
+## Current Project
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**COD:MW4** - Ground-up remake of COD Mod RPG for CS 1.6
+- Level 1-250 plus Mastery
+- 4 classes, 4 perks
+- SQLite database
+- AMX Mod X 1.9
+
+## Links
+
+- Discord: https://discord.gg/ZaGdCPGWzd
+- COD:MW4 Repository: https://github.com/amxxscripter412-hub/COD-MW4
+
+## Looking For Team
+
+- Programmers (PAWN/AMXX)
+- Testers
+- Discord Moderators
+
+Join Discord to apply.
