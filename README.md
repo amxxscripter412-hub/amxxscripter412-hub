@@ -1,3 +1,6 @@
+Template GitHub Profile README (Cyber / Dev / Gaming Aesthetic)
+Berikut adalah template lengkap file README.md beserta konfigurasinya untuk membuat profil GitHub kamu terlihat super keren dengan animasi typing, ASCII header, 3D contribution graph, Spotify integration, serta Snake Game action.
+1. File README.md (Salin Seluruh Isinya ke Repository Profile Kamu)
 <!-- ======================================================== -->
 <!-- ASCII HEADER & ANIMATED TYPING BANNER -->
 <!-- ======================================================== -->
@@ -62,9 +65,9 @@ Developer:
 <p>Ular ini memakan kontribusi komit GitHub secara otomatis setiap harinya!</p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amxxscripter412-hub/amxxscripter412-hub/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amxxscripter412-hub/amxxscripter412-hub/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/amxxscripter412-hub/amxxscripter412-hub/output/github-contribution-grid-snake.svg">
 </picture>
 
 <br/><br/>
@@ -86,10 +89,10 @@ Developer:
 <table border="0">
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
+      <img src="https://github-readme-stats.vercel.app/api?username=amxxscripter412-hub&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=amxxscripter412-hub&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
     </td>
   </tr>
 </table>
@@ -107,5 +110,65 @@ Developer:
 
 <div align="center">
   <p>"Code is like humor. When you have to explain it, it’s bad."</p>
-  <img src="https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=00FF66&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=amxxscripter412-hub&color=00FF66&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
+2. Panduan Pengaturan GitHub Actions (Untuk Animasi Ular & Graph 3D)
+Agar animasi ular (Snake Game) dan grafik 3D berjalan otomatis, buat dua file workflow di dalam repository profil kamu:
+A. Workflow Animasi Ular (Snake Game)
+Buat file baru di path: .github/workflows/snake.yml lalu isi dengan kode berikut:
+name: Generate Snake Animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Jalan otomatis tiap jam 12 malam
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Push Snake SVG to Output Branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+B. Workflow Grafik 3D (3D Isometric Graph)
+Buat file baru di path: .github/workflows/models3d.yml lalu isi dengan kode berikut:
+name: Generate 3D Contribution Graph
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: yoshi38610/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A .
+          git commit -m "Update 3D Contribution Graph" || exit 0
+          git push
+3. Langkah Terakhir (Penting!)
+Ganti semua teks amxxscripter412-hub pada file README.md dengan username GitHub kamu.
+Buka tab Actions di repository kamu dan jalankan workflow secara manual sekali (Run workflow) agar gambar SVG awal terbentuk.
+Pastikan di menu Settings > Actions > General, opsi Workflow permissions diatur ke Read and write permissions.
