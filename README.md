@@ -1,6 +1,3 @@
-Template GitHub Profile README (Cyber / Dev / Gaming Aesthetic)
-Berikut adalah template lengkap file README.md beserta konfigurasinya untuk membuat profil GitHub kamu terlihat super keren dengan animasi typing, ASCII header, 3D contribution graph, Spotify integration, serta Snake Game action.
-1. File README.md (Salin Seluruh Isinya ke Repository Profile Kamu)
 <!-- ======================================================== -->
 <!-- ASCII HEADER & ANIMATED TYPING BANNER -->
 <!-- ======================================================== -->
