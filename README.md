@@ -59,7 +59,7 @@ Developer:
 
 <div align="center">
 
-<p>Ular ini memakan kontribusi komit GitHub secara otomatis setiap harinya!</p>
+<p>This snake automatically eats my GitHub contribution commits every day!</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amxxscripter412-hub/amxxscripter412-hub/output/github-contribution-grid-snake-dark.svg">
